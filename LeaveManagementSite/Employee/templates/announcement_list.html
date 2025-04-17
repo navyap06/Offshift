@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}📢 Latest Announcements{% endblock %}
+
+{% block css_block %}
+<link rel="stylesheet" href="{% static 'css/announcement.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1>📢 Latest Announcements</h1>
+
+<form method="POST" class="announcement-form">
+    {% csrf_token %}
+    <div>
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" required>
+    </div>
+    <div>
+        <label for="content">Content</label>
+        <textarea id="content" name="content" rows="4" required></textarea>
+    </div>
+    <button type="submit">➕ Add Announcement</button>
+</form>
+
+<hr>
+
+<section>
+    <h2>📢 Latest Announcements</h2>
+    {% if announcements %}
+        <table class="announcement-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Content</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for announcement in announcements %}
+                    <tr>
+                        <td><strong>{{ announcement.title }}</strong></td>
+                        <td>{{ announcement.content|truncatewords:20 }}</td>
+                        <td>{{ announcement.created_at|date:"F d, Y" }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No announcements available!</p>
+    {% endif %}
+</section>
+<form action="{% url 'Employee:clear' %}" method="POST">
+    {% csrf_token %}
+    <button id="clear" class="btn clear" type="submit"
+        onclick="return confirm('Are you sure you want to delete all  requests?');">
+        Clear All
+    </button>
+</form>
+
+{% endblock %}

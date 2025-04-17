@@ -1,0 +1,219 @@
+body {
+    background: #f4fdb9;
+    color: #000000;
+    margin:0;
+
+}
+
+h1, h2, h3 {
+    color: #000000;
+    align-items: center;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+a:hover {
+    transform: scale(1.05);
+    color: #000000;
+}
+
+p {
+    font-size: 16px;
+    color: #070707;
+}
+
+section {
+    border-radius: 15px;
+    padding: 15px;
+    margin: 20px 0;
+    position: relative;
+}
+
+section h2 {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+section button {
+    float: right;
+    background-color: #ff009d;
+    color: white;
+    border: none;
+    padding: 4px 7px;
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+section button:hover {
+    background-color: #dcfffd;
+    transform: translateY(-2px);
+}
+
+section button a {
+    color: #0d0d0d;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.announcement-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #000000;
+    color: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.announcement-table th {
+    background-color: #727272;
+    color: #ffffff;
+    padding: 10px;
+    text-align: left;
+}
+
+.announcement-table td {
+    padding: 12px 15px;
+}
+
+.announcement-table tr:hover {
+    background-color: #3e3e3e;
+}
+
+
+.button-link {
+    display: inline-block;
+    color: #ffffff;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.button-link:hover {
+    background-color: #535353;
+}
+
+.apply-link {
+    display: inline-block;
+    margin: 10px;
+}
+
+
+.employer-section {
+    padding: 40px 20px;
+    background: #faffbd;
+}
+
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 80%;
+    margin: auto;
+}
+
+
+.image-wrapper {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+.image-wrapper img.calendar-img {
+    width: 100%;
+    max-width: 380px;
+    border-radius: 10px;
+}
+
+.content {
+    width: 50%;
+    max-width: 500px;
+    text-align: left;
+}
+
+.content h2 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.content p {
+    font-size: 1.2rem;
+    color: #222;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+
+.cta-button {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #333;
+}
+
+
+.employee-benefits {
+    padding: 50px 0;
+    background-color: #7fd5d4;
+    height:500px;
+}
+
+.benefits-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.benefits-content {
+    flex: 1;
+    max-width: 50
+}
+
+
+
+.global-platform-section {
+    background:   #f7ffa0 ;
+    width:100%;
+    border-radius: 8px;
+    margin-top: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.platform-image-container {
+    border: none;
+    border-radius: 10px;
+    margin-top: 0.1px;
+    margin-left: 100px;
+    width:400px;
+    height:400px;
+    box-shadow: 8px 8px 20px rgba(122, 158, 177, 0.1);
+    transition: all 0.3s ease;
+}

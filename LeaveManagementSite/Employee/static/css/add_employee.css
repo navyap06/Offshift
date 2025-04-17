@@ -1,0 +1,99 @@
+body {
+    background: #f7f7ff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.form-wrapper {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.8s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.employee-form .input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.employee-form input,
+.employee-form textarea,
+.employee-form select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #dcdcdc;
+    border-radius: 10px;
+    outline: none;
+    background: transparent;
+    transition: border-color 0.3s;
+    font-size: 16px;
+}
+
+.employee-form textarea {
+    resize: vertical;
+    height: 80px;
+}
+
+.employee-form input:focus,
+.employee-form textarea:focus,
+.employee-form select:focus {
+    border-color: #6c63ff;
+}
+
+.employee-form label {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    font-size: 14px;
+    color: #888;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.employee-form input:focus+label,
+.employee-form input:valid+label,
+.employee-form textarea:focus+label,
+.employee-form textarea:valid+label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: #6c63ff;
+    background: #fff;
+    padding: 0 5px;
+}
+
+.employee-form .submit-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border: none;
+    background: linear-gradient(to right, #6c63ff, #4e4eec);
+    color: #fff;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.employee-form .submit-btn:hover {
+    background: linear-gradient(to right, #4e4eec, #6c63ff);
+    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+}

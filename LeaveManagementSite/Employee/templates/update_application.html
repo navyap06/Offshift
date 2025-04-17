@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css_block %}
+<link rel="stylesheet" href="{% static 'css/apply_job.css' %}">
+{% endblock %}
+{% block content %}
+<h2>Update Job Application</h2>
+<form method="post">
+    {% csrf_token %}
+    <label>Name:</label>
+    <input type="text" name="name" value="{{ application.name }}" required><br>
+
+    <label>Age:</label>
+    <input type="number" name="age" value="{{ application.age }}" required><br>
+
+    <label>Experience:</label>
+    <input type="number" name="experience" value="{{ application.experience }}" required><br>
+
+    <label>Skills:</label>
+    <input type="text" name="skills" value="{{ application.skills }}" required><br>
+
+    <label>Why should we hire you?</label><br>
+    <textarea name="why_us" rows="4" required>{{ application.why_us }}</textarea><br>
+
+    <button type="submit">Update Application</button>
+</form>
+{% endblock %}

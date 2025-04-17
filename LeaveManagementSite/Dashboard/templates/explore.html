@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_block %}
+<link rel="stylesheet" href="{% static 'css/overview.css' %}">
+{% endblock %}
+
+{% block content %}
+
+
+<section class="comic-container">
+    <div class="panel">
+        <img src="{% static 'images/image14.png' %}" alt="Feature 1">
+        <p class="speech-bubble">Manage leaves with ease and transparency!</p>
+    </div>
+    <div class="panel">
+        <img src="{% static 'images/image15.avif' %}" alt="Testimonial 1">
+        <p class="speech-bubble">"Off Shift saved us hours every month!" - HR Manager</p>
+    </div>
+    <div class="panel">
+        <img src="{% static 'images/image16.webp' %}" alt="Testimonial 2">
+        <p class="speech-bubble">"A game changer for our remote teams!" - CEO</p>
+    </div>
+</section>
+
+<section class="hero text-center py-5">
+    <div class="container">
+        <h1 class="fw-bold">Discover Effortless Leave Management</h1>
+        <p class="lead">Say goodbye to paperwork and manage employee leaves with ease.</p>
+    </div>
+</section>
+
+<section id="features" class="container py-5">
+    <h2 class="text-center mb-4">Key Features</h2>
+    <div class="card-container">
+        <div class="card">
+            <h4>✅ Smart Leave Requests</h4>
+            <p>Employees can apply for leave in seconds.</p>
+        </div>
+        <div class="card">
+            <h4>✅ Real-Time Approvals</h4>
+            <p>Managers can approve/reject requests instantly.</p>
+        </div>
+        <div class="card">
+            <h4>✅ Easy to work with employees</h4>
+            <p>Employees can apply for leave anytime anywhere.</p>
+        </div>
+    </div>
+</section>
+
+<section class="how-it-works bg-light py-5">
+    <div class="container text-center">
+        <h2>How It Works</h2>
+        <div class="card-container">
+            <div class="card">
+                <h4>1️⃣ Employees request leave</h4>
+            </div>
+            <div class="card">
+                <h4>2️⃣ Managers approve or reject</h4>
+            </div>
+            <div class="card">
+                <h4>3️⃣ System updates records</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials py-5">
+    <div class="container text-center">
+        <h2>What Our Users Say</h2>
+        <blockquote class="blockquote mt-4">
+            <p>“Off Shift made our leave tracking effortless. Highly recommend!”</p>
+            <footer class="blockquote-footer">HR Manager</footer>
+        </blockquote>
+    </div>
+</section>
+
+<section class="cta text-center py-5">
+    <div class="container">
+        <h2>Ready to simplify your leave management?</h2>
+    </div>
+</section>
+
+<section class="comic-container">
+    <div class="panel">
+        <img src="{% static 'images/image11.png' %}" class="character" alt="Character 1">
+        <p class="speech-bubble">I am tired of working with 20 different systems to get one simple thing done.</p>
+    </div>
+    <div class="panel">
+        <img src="{% static 'images/image12.png' %}" class="character" alt="Character 2">
+        <p class="speech-bubble">Why don’t you use a modern system like Off Shift?</p>
+    </div>
+    <div class="panel">
+        <img src="{% static 'images/image11.png' %}" class="character" alt="Character 1">
+        <p class="speech-bubble">Wow, that must be a big decision to make!</p>
+    </div>
+    <div class="panel">
+        <img src="{% static 'images/image12.png' %}" class="character" alt="Character 2">
+        <p class="speech-bubble">Not really, we moved module by module. The support was excellent!</p>
+    </div>
+    <div class="panel">
+        <img src="{% static 'images/image11.png' %}" class="character" alt="Character 1">
+        <p class="thought-bubble">Wow, I need to talk to my manager about this.</p>
+    </div>
+    <div class="panel">
+        <img src="{% static 'images/image12.png' %}" class="character" alt="Character 1">
+        <p class="thought-bubble">Yeah Sure!</p>
+    </div>
+
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}

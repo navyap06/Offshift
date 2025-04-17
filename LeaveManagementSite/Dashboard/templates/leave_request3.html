@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Leave Management</title>
+    <link rel="stylesheet" href="{% static 'css/leave_request.css' %}">
+</head>
+
+<body>
+    <div>
+        <a href="{% url 'home' %}">Home </a>
+    </div>
+    <div class="container">
+        <div id="main">
+            <h2>Leave Requests</h2>
+
+            <div class="card-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Employee Name</th>
+                            <th>Leave Type</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for requests in leave_request2 %}
+                        <tr>
+                            <td>{{ requests.employee_name }}</td>
+                            <td>{{ requests.leave_type }}</td>
+                            <td>{{ requests.start_date }}</td>
+                            <td>{{ requests.end_date }}</td>
+                            <td>{{ requests.status }}</td>
+                            <td>
+                                {% if requests.status == 'Pending' %}
+                                <form method="POST" style="display:inline;">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="leaves_id" value="{{ requests.id }}">
+                                    <button class="btn approve" name="action" value="approve">✅ Approve</button>
+                                    <button class="btn reject" name="action" value="reject">❌ Reject</button>
+                                    <button class="btn delete" name="action" value="delete"
+                                        onclick="return confirm('Delete this leave request?');">🗑️ Delete</button>
+                                </form>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <form action="#" method="POST">
+                <button id="clear" class="btn clear" type="submit">Clear All</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

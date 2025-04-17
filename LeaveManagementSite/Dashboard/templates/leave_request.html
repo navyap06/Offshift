@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Leave Management</title>
+    <link rel="stylesheet" href="{% static 'css/leave_status1.css' %}">
+</head>
+
+<body>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-warning  alert-dismissible fade show" role="alert">
+        {{message}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+    
+    <div class="top-banner">
+        <img src="{% static 'images/image18.gif' %}" alt="Banner Hero">
+        <h1>Leave Requests Dashboard</h1>
+    </div>
+
+    <div class="nav">
+        <a href="{% url 'apply_leave' %}">📝 Apply Leave</a>
+        <a href="{% url 'home' %}">🏠 Home</a>
+    </div>
+
+    <div class="container">
+        <div id="main">
+            <h2>
+                <img src="{% static 'images/image14.png' %}" alt="Calendar Icon"> Leave Requests
+            </h2>
+    
+            <div class="card-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Employee Name</th>
+                            <th>Leave Type</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for request in leave_requests %}
+                        <tr>
+                            <td>{{ request.employee_name }}</td>
+                            <td>{{ request.leave_type }}</td>
+                            <td>{{ request.start_date }}</td>
+                            <td>{{ request.end_date }}</td>
+                            <td>
+                                {% if request.status == 'Approved' %}
+                                    <img src="{% static 'images/image25.jpg' %}" alt="Approved" class="status-icon">
+                                {% elif request.status == 'Pending' %}
+                                    <img src="{% static 'images/image26.jpg' %}" alt="Pending" class="status-icon">
+                                {% else %}
+                                    <img src="{% static 'images/image27.jpg' %}" alt="Rejected" class="status-icon">
+                                {% endif %}
+                                {{ request.status }}
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="5" style="text-align: center;">No leave requests found.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+    
+            <form action="{% url 'clear_leaves' %}" method="POST">
+                {% csrf_token %}
+                <button id="clear" class="btn clear" type="submit"
+                    onclick="return confirm('Are you sure you want to delete all leave requests?');">
+                    Clear All
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

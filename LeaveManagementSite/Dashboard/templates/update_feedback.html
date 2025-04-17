@@ -1,0 +1,48 @@
+<!-- templates/Dashboard/update_feedback.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Feedback</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="text-center">✏️ Update Feedback</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Name:</label>
+            <input type="text" name="name" class="form-control" value="{{ feedback.name }}" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email:</label>
+            <input type="email" name="email" class="form-control" value="{{ feedback.email }}" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Category:</label>
+            <select name="category" class="form-select">
+                <option {% if feedback.category == 'Service' %}selected{% endif %}>Service</option>
+                <option {% if feedback.category == 'Website' %}selected{% endif %}>Website</option>
+                <option {% if feedback.category == 'Support' %}selected{% endif %}>Support</option>
+                <option {% if feedback.category == 'Other' %}selected{% endif %}>Other</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Rating:</label>
+            <select name="rating" class="form-select">
+                {% for i in "54321" %}
+                    <option value="{{ i }}" {% if feedback.rating|stringformat:"s" == i %}selected{% endif %}>{{ i }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Message:</label>
+            <textarea name="message" class="form-control" rows="4">{{ feedback.message }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+        <a href="{% url 'feedback' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+</body>
+</html>

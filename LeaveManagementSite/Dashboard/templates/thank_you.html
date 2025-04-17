@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f8ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .thank-you-box {
+      text-align: center;
+      background: white;
+      padding: 40px 50px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .thank-you-box h1 {
+      color: #4caf50;
+      margin-bottom: 20px;
+    }
+
+    .thank-you-box p {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .thank-you-box a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      text-decoration: none;
+      background: #4caf50;
+      color: white;
+      border-radius: 8px;
+    }
+
+    .thank-you-box a:hover {
+      background: #43a047;
+    }
+  </style>
+</head>
+<body>
+  <div class="thank-you-box">
+    <h1>Thank You! 🙌</h1>
+    <p>Your message has been received. We'll get back to you shortly.</p>
+    <a href="{% url 'home' %}">Back to Home</a>
+  </div>
+</body>
+</html>

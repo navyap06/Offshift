@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css_block %}
+    <link rel="stylesheet" href="{% static 'css/Applications.css' %}">
+{% endblock %}
+{% block content %}
+<h2>Work from home Applications</h2>
+<div class="card-container">
+    {% if applications %}
+    {% for application in applications %}
+    <div class="card">
+        <h3>{{ application.name }}</h3>
+        <p><strong>Age:</strong> {{ application.age }}</p>
+        <p><strong>Reason:</strong> {{ application.reason }}</p>
+        <p><strong>Skills:</strong> {{ application.skills }}</p>
+        <p><strong>Status:</strong>
+            {% if request.user.is_superuser or request.user.is_staff %}
+            {{ application.status }}
+            {% else %}
+            {% if application.status == 'Pending' %}
+            Application Under Review
+            {% else %}
+            {{ application.status }}
+            {% endif %}
+            {% endif %}
+        </p>
+
+        <div class="card-actions">
+            {% if request.user == application.user or request.user.is_superuser or request.user.is_staff %}
+            <a href="{% url 'Employee:update_application' application.pk %}" class="btn update-btn">Update</a>
+            {% endif %}
+        </div>
+
+        {% if request.user.is_superuser or request.user.is_staff %}
+        <div class="card-actions">
+            {% if application.status == 'Pending' %}
+            <a href="{% url 'Employee:update_status' application.pk 'Accepted' %}" class="btn accept-btn">Accept</a>
+            <a href="{% url 'Employee:update_status' application.pk 'Rejected' %}" class="btn reject-btn">Reject</a>
+            {% endif %}
+        </div>
+        {% endif %}
+
+    </div>
+   
+    {% endfor %}
+    {% else %}
+            <p>No applications available.</p>
+    {% endif %}
+    
+    <form action="{% url 'Employee:clears' %}" method="POST">
+        {% csrf_token %}
+        <button id="clear" class="btn clear" type="submit"
+            onclick="return confirm('Are you sure you want to delete all  requests?');">
+            Clear All
+        </button>
+    </form>
+</div>
+{% endblock %}
+

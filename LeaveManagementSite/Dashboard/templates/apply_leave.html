@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Leave | Off Shift</title>
+    <link rel="stylesheet" href="{% static 'css/apply_leaves.css' %}">
+
+</head>
+
+<body>
+    {% if messages %}
+    {% for message in messages %}
+        <div class="message {{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+{% endif %}
+    <div class="container">
+        <header class="header">
+            <h1 class="logo">🗓️ Leave Management</h1>
+            <button class="new-item-btn"><a href="{% url 'leave_request' %}">view Leave Requests</a></button>
+            <button class="new-item-btn"><a href="{% url 'home' %}">home</a></button>
+        </header>
+        <div class="main-content">
+            <div class="workflow">
+                <div class="step blue">
+                    <h3>Leave Request</h3>
+                    <p>Employee submits leave request.</p>
+                    <img src="{% static 'images/image14.png' %}" alt="User">
+                </div>
+                <div class="step yellow">
+                    <h3>Manager Approval</h3>
+                    <p>Manager reviews the request.</p>
+                    <img src="{% static 'images/image8.png' %}" alt="Manager">
+                </div>
+                <div class="step pink">
+                    <h3>HR Approval</h3>
+                    <p>HR finalizes approval.</p>
+                    <img src="{% static 'images/image16.webp' %}" alt="HR">
+                </div>
+                <div class="completed">✅ Completed</div>
+            </div>
+            <div class="form-section">
+                <div class="request-details">
+                    <form method="POST" enctype="multipart/form-data" action="{% url 'apply_leave' %}">
+                        {% csrf_token %}
+                        
+                        <h3>Employee Details</h3>
+                        <input type="text" name="employee_name" 
+                        value="{{ request.user.get_full_name|default:request.user.username }}" 
+                        required readonly>
+                    
+                        <h3>Request Details</h3>
+                        <input type="date" name="start_date" required>
+                        <input type="date" name="end_date" required>
+                    
+                        <select name="leave_type" required>
+                            <option value="">Select Reason</option>
+                            <option value="Sick Leave">Sick Leave</option>
+                            <option value="Vacation">Vacation</option>
+                            <option value="Personal">Personal</option>
+                        </select>
+                    
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
