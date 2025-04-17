@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Payroll List - Company Portal{% endblock %}
+{% block css_block %}
+<link rel="stylesheet" href="{% static 'css/payroll.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="payroll-card">
+
+    <div class="payroll-header">
+        <img src="{% static 'images/image1.jpg' %}" alt="Payroll Banner" class="payroll-image">
+        <div>
+            <h1>All Employee Payrolls</h1>
+            <p>Here's the breakdown of salaries, deductions, and total pays for this month.</p>
+        </div>
+    </div>
+
+    <section>
+        <table class="announcement-table">
+            <thead>
+                <tr>
+                    <th>Employee</th>
+                    <th>Salary</th>
+                    <th>Deductions</th>
+                    <th>Total Pay</th>
+                    <th>Month</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for payroll in payrolls %}
+                <tr>
+                    <td>{{ payroll.employee.username }}</td>
+                    <td>{{ payroll.salary }}</td>
+                    <td>{{ payroll.deductions }}</td>
+                    <td>{{ payroll.total_pay }}</td>
+                    <td>{{ payroll.month }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5">No payroll data available.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</div>
+
+
+
+{% endblock %}

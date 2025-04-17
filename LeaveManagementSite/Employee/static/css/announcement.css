@@ -1,0 +1,102 @@
+.announcement-form {
+    background-color: #c8e6c9;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.announcement-form div {
+    margin-bottom: 10px;
+}
+
+.announcement-form label {
+    display: block;
+    font-weight: bold;
+}
+
+.announcement-form input,
+.announcement-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #81c784;
+    box-sizing: border-box;
+}
+
+.announcement-form button {
+    background-color: #66bb6a;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.announcement-form button:hover {
+    background-color: #388e3c;
+}
+
+/* Styling for the announcements table */
+.announcement-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.announcement-table th, .announcement-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.announcement-table th {
+    background-color: #4CAF50; /* Light Green */
+    color: white;
+}
+
+.announcement-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.announcement-table tr:hover {
+    background-color: #ddd;
+}
+
+.date {
+    font-style: italic;
+    color: #888;
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+}
+
+#clear {
+    margin-top:20px;
+    margin-left:10px;
+    background-color: #ff2600;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#clear:hover {
+    background-color: #e5533d;
+}
+
+.card-container p {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+    margin-top: 20px;
+}

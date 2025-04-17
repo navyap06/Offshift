@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 642px;
+    background: linear-gradient(135deg, #b084f7, #dac1ff);
+}
+.login-container {
+    display: flex;
+    width: 100%;
+    max-width: 1100px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.right-panel {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f3e8ff;
+    padding: 0px;
+}
+.left-panel {
+    width: 50%;
+    padding: 50px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+h2 {
+    font-size: 26px;
+    color:rgb(235, 26, 124);
+    margin-left: 130px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.form-control {
+    width: 100%;
+    padding:15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: rgb(231, 51, 105);
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.btn-primary:hover {
+    background-color: #333;
+}
+.right-panel video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    pointer-events: none;
+}
+.left-panel form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.left-panel input,
+.left-panel select,
+.left-panel button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.left-panel label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.left-panel button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.left-panel button:hover {
+    background-color: #0056b3;
+}
+.flash-message-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1050; /* higher than navbar or other elements */
+    padding: 10px 20px;
+}
+
+.flash-message-container .alert {
+    margin-bottom: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}

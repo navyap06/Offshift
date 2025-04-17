@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css_block %}
+<link rel="stylesheet" href="{% static 'css/add.css' %}">
+{% endblock %}
+{% block content %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-warning  alert-dismissible fade show" role="alert">
+    {{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+{% endif %}
+
+<h2>Add Payroll Entry</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label for="employee">Employee:</label>
+    <select name="employee" id="employee">
+        {% for user in users %}
+        <option value="{{ user.id }}">{{ user.username }}</option>
+        {% endfor %}
+    </select>
+
+    <label for="salary">Salary:</label>
+    <input type="number" step="0.01" name="salary" id="salary" required>
+
+    <label for="deductions">Deductions:</label>
+    <input type="number" step="0.01" name="deductions" id="deductions" required>
+
+    <label for="month">Month:</label>
+    <input type="text" name="month" id="month" placeholder="April 2025" required>
+
+    <button type="submit">Submit Payroll</button>
+</form>
+
+<a href="{% url 'Employee:payroll_list' %}">Back to Payroll List</a>
+{% endblock %}

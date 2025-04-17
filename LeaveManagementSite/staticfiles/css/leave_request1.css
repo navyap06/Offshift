@@ -1,0 +1,123 @@
+body {
+    background: #b4e9f8;
+    color: #070707;
+    margin: 0;
+    padding: 0;
+    background-image: url("../images/comic-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 90%;
+    margin: 50px auto;
+    background: rgba(141, 246, 255, 0.9);
+    border: 5px solid #11136a;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #053270;
+}
+
+#main h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #000000;
+    text-shadow: 2px 2px #00ffee;
+    margin-bottom: 20px;
+}
+
+a {
+    font-size: 1.5rem;
+    color: #000000;
+    text-decoration: none;
+    margin: 15px;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+a:hover {
+    transform: scale(1.1);
+    color: #ff4500;
+}
+
+.card-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1ee7e7;
+    border: 3px solid #000000;
+    font-size: 1.1rem;
+}
+
+.card-table th,
+.card-table td {
+    padding: 12px;
+    border: 2px dashed #090045;
+    text-align: center;
+}
+
+.card-table th {
+    background-color: #ffe4e1;
+    color: #000000;
+}
+
+.btn {
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 0.95rem;
+    padding: 8px 15px;
+    border: none;
+    margin: 4px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 3px 3px 0 #000000;
+}
+
+.btn.approve {
+    background-color: #7fff00;
+    color: #000;
+}
+
+.btn.reject {
+    background-color: #ff6347;
+    color: #fff;
+}
+
+.btn.delete {
+    background-color: #ffa500;
+    color: #fff;
+}
+
+.btn.clear {
+    background-color: #d2691e;
+    color: #fff;
+    display: block;
+    margin: 30px auto;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 5px 5px 0 #000;
+}
+
+form {
+    display: inline;
+}
+.flash-message-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1050; /* higher than navbar or other elements */
+    padding: 10px 20px;
+}
+
+.flash-message-container .alert {
+    margin-bottom: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}

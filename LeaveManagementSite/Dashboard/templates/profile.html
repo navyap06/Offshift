@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}profile| Leave Management{% endblock %}
+{% block css_block %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+{% block content %}
+<div class="profile-card">
+    {% if user.is_superuser %}
+    <div>
+        <img src="{% static 'images/image222.jpg' %}" alt="Superuser Profile Picture" class="profile-picture">
+        <h2>Hello, {{ user.username }} </h2>
+    </div>
+    {% elif user.is_active %}
+    <div>
+        <img src="{% static 'images/image222.jpg' %}" alt="Staff Profile Picture" class="profile-picture">
+        <h2>Hello, {{ user.username }} </h2>
+    </div>
+    {% endif %}
+
+
+
+    <div class="profile-info">
+        
+
+        {% if user.is_staff %}
+        <p><strong> Full Name:</strong> {{ user.first_name }}</p>
+        <p><strong> Last Name:</strong> {{ user.last_name }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong> Staff:</strong> {{ user.is_staff }}</p>
+        {% endif %}
+        {% if user.is_superuser %}
+        <p><strong> Superuser:</strong> {{ user.is_superuser }}</p>
+        {% else %}
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        {% endif %}
+    </div>
+
+    <div>
+        <a href="{% url 'logout' %}" class="logout-button">Logout</a>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+{% endblock %}
+

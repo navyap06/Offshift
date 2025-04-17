@@ -1,0 +1,272 @@
+.custom-navbar {
+    background-color: #000000; 
+    padding: 10px 20px;
+}
+
+.animate-navbar {
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+.brand-name {
+    font-family: 'Georgia', serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #77e8ff; 
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+
+.navbar-nav .nav-link:hover {
+    color: #f8b400; 
+}
+
+
+.dropdown-menu {
+    background-color: #34495E; 
+    animation: dropdownFadeIn 0.3s ease-in-out;
+}
+
+.dropdown-menu .dropdown-item {
+    color: white;
+    transition: background 0.3s ease-in-out;
+}
+
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #f8b400;
+    color: black;
+}
+
+
+.btn-outline-light {
+    border-color: #f8b400;
+    color: #f8b400;
+}
+
+.btn-outline-light:hover {
+    background-color: #f8b400;
+    color: black;
+}
+
+.btn-primary {
+    background-color: #f8b400;
+    border-color: #f8b400;
+}
+
+.btn-primary:hover {
+    background-color: #d89c00;
+    border-color: #d89c00;
+}
+
+
+.btn-animate {
+    transition: transform 0.3s ease-in-out;
+}
+
+.btn-animate:hover {
+    transform: scale(1.05);
+}
+
+
+.animate-content {
+    animation: slideUp 1s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.footer {
+    background-color: #111;
+    color: white;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #444;
+}
+
+.language-btn {
+    background: #222;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.footer-nav a {
+    color: #bbb;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    width: 18%;
+}
+
+.footer-column h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-column ul li a:hover {
+    color: white;
+}
+
+/* Newsletter Section */
+.footer-newsletter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #444;
+    padding-top: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-brand h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 20px;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.newsletter-text p {
+    font-size: 16px;
+    color: #bbb;
+}
+
+.newsletter-form {
+    display: flex;
+    align-items: center;
+    background: #222;
+    border-radius: 50px;
+    padding: 5px 10px;
+}
+
+.newsletter-form input {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 10px;
+    color: white;
+    font-size: 14px;
+    width: 250px;
+}
+
+.newsletter-form button {
+    background: white;
+    border: none;
+    color: black;
+    font-size: 20px;
+    padding: 8px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.privacy-text {
+    font-size: 12px;
+    color: #bbb;
+    margin-top: 10px;
+}
+
+.privacy-text a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.footer-bottom nav a {
+    color: #bbb;
+    margin-left: 15px;
+    text-decoration: none;
+}

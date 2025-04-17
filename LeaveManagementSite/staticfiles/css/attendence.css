@@ -1,0 +1,61 @@
+/* comic.css */
+
+body {
+    background-color: #fff8e7;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
+    color: #333;
+  }
+  
+  .dashboard-container {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .card {
+    background-color: #fef4c5;
+    border: 4px dashed #ff8c00;
+    border-radius: 12px;
+    box-shadow: 8px 8px 0 rgba(0,0,0,0.2);
+    padding: 20px;
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+  }
+  
+  h2, h3 {
+    color: #e60073;
+    text-shadow: 2px 2px #ffc0cb;
+  }
+  
+  ul {
+    list-style: square inside;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00ccff;
+    border: 2px solid #000;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #ffde59;
+    color: #e60000;
+  }
+  
+  #live-clock {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1a1aff;
+  }
+  

@@ -1,0 +1,364 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f6f2;
+}
+.custom-navbar {
+    background-color: #000000; 
+    padding: 10px 20px;
+}
+
+.animate-navbar {
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+.brand-name {
+    font-family: 'Georgia', serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #77e8ff; 
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+
+.navbar-nav .nav-link:hover {
+    color: #f8b400; 
+}
+
+
+.dropdown-menu {
+    background-color: #34495E; 
+    animation: dropdownFadeIn 0.3s ease-in-out;
+}
+
+.dropdown-menu .dropdown-item {
+    color: white;
+    transition: background 0.3s ease-in-out;
+}
+
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #f8b400;
+    color: black;
+}
+
+
+.btn-outline-light {
+    border-color: #f8b400;
+    color: #f8b400;
+}
+
+.btn-outline-light:hover {
+    background-color: #f8b400;
+    color: black;
+}
+
+.btn-primary {
+    background-color: #f8b400;
+    border-color: #f8b400;
+}
+
+.btn-primary:hover {
+    background-color: #d89c00;
+    border-color: #d89c00;
+}
+
+
+.btn-animate {
+    transition: transform 0.3s ease-in-out;
+}
+
+.btn-animate:hover {
+    transform: scale(1.05);
+}
+
+
+.animate-content {
+    animation: slideUp 1s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.about-section {
+    padding: 80px 10%;
+}
+
+.content-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+
+
+/* Ensure image is 50% width */
+.image-container {
+    margin-left: 8px;
+    position: relative;
+    width: 50%;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.anime-shape {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 120px;
+    height: 120px;
+    background: url('{% static "images/image5.png" %}') no-repeat center;
+    background-size: contain;
+}
+
+.team-section {
+    text-align: center;
+    padding: 80px 10%;
+    background: linear-gradient(135deg, #f9f6f2 40%, #ffecd1 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.team-section h2 {
+    font-size: 3em;
+    font-weight: bold;
+    color: #2c2c2c;
+    text-shadow: 2px 2px 10px rgba(255, 165, 0, 0.3);
+    margin-bottom: 50px;
+}
+
+/* Animated floating bubbles in the background */
+.team-section::before, .team-section::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 105, 180, 0.2);
+    border-radius: 50%;
+    z-index: 0;
+    filter: blur(50px);
+}
+
+.team-section::before {
+    top: 10%;
+    left: 5%;
+    animation: floatAnimation 6s infinite alternate ease-in-out;
+}
+
+.team-section::after {
+    bottom: 10%;
+    right: 5%;
+    animation: floatAnimation 8s infinite alternate ease-in-out;
+}
+
+@keyframes floatAnimation {
+    from {
+        transform: translateY(-10px);
+    }
+    to {
+        transform: translateY(10px);
+    }
+}
+
+/* Team member container */
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+/* Team member card */
+.team-member {
+    text-align: center;
+    width: 220px;
+    position: relative;
+}
+
+/* Anime-style glowing images */
+.team-member img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 165, 0, 0.5);
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.team-member img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 165, 0, 0.8);
+}
+
+.team-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    background-color: #0f1c2e;
+    padding: 80px 10%;
+}
+
+.team-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    gap: 50px;
+}
+
+/* Left Side: Text Section */
+.team-text {
+    width: 40%;
+    color: #fff;
+}
+
+.team-text h2 {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.team-text p {
+    font-size: 1.2em;
+    margin: 20px 0;
+    color: #b0bec5;
+}
+
+.contact-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contact-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Right Side: Team Cards */
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 60%;
+}
+
+.team-member {
+    width: 220px;
+    background: #f1acff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.6);
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.team-member h3 {
+    font-size: 1.5em;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    font-size: 1em;
+    color: #e0e0e0;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-icons i {
+    color: #fff;
+    font-size: 1.2em;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.social-icons i:hover {
+    color: #0f1c2e;
+}
+.flash-message-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1050; /* higher than navbar or other elements */
+    padding: 10px 20px;
+}
+
+.flash-message-container .alert {
+    margin-bottom: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}

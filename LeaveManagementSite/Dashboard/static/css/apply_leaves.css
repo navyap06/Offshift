@@ -1,0 +1,123 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #befcfb;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+}
+img{
+    height: 100px;
+    width: 100px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fefef6;
+    padding: 15px 30px;
+    border-radius: 12px;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000;
+}
+.new-item-btn {
+    background: #56f5db;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.new-item-btn>a{
+   font-size: 18px;
+   text-decoration: none;
+   color:black;
+}
+.main-content {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+.workflow {
+    flex: 1;
+    /* background: rgba(255, 255, 246, 0.934); */
+    padding: 20px;
+    border-radius: 12px;
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+}
+.step {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.blue { background: #def7ff; }
+.yellow { background: #fff9c8; color: #333; }
+.pink { background: #f8e2ff; }
+.completed {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 8px;
+    color: #000000;
+}
+.form-section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.employee-details, .request-details {
+    /* background: rgb(255, 255, 245); */
+    height:500px;
+    padding: 20px;
+    border-radius: 12px;
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+}
+h3 {
+    margin-bottom: 15px;
+    color: #000000;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+input, select, textarea, button {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #000000;
+}
+.submit-btn {
+    background: #000000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+.message {
+    margin: 20px auto;
+    width: 80%;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}

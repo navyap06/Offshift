@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us | OffShift</title>
+    <link rel="stylesheet" href="{% static 'css/contact_Us.css' %}">
+
+    <!-- Font Awesome CDN for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-aWcNUyJAhhtK5d+XWYmHgTDSuxv1r7ZaH+IlqC5vWIFW06lZlmeCz37ePSHlCRkFsP9ZBZCVADpxHRhN2VZoTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="nav-buttons">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'logout' %}">Logout</a>
+            <a href="{% url 'profile' %}">Profile</a>
+        </div>
+
+        <div class="left-image">
+            <img src="{% static 'images/image29.jpg' %}" alt="Dashboard Preview">
+        </div>
+
+        <form method="POST" class="contact-form">
+            {% csrf_token %}
+            <h2>Contact Us</h2>
+            <p>Complete the information below and we'll get back to you soon</p>
+
+            <input type="text" name="username" placeholder="name" required>
+        
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" rows="5" placeholder="Write your message" required></textarea>
+
+            <button type="submit">Submit</button>
+
+            <!-- Social Media Icons -->
+            <div class="social-icons">
+                <a href="https://www.instagram.com/" target="_blank">
+                    <img src="{% static 'images/image30.jpg' %}" alt="Instagram" class="social-icon">
+                </a>
+                <a href="https://www.facebook.com/" target="_blank">
+                    <img src="{% static 'images/image31.jpg' %}" alt="Facebook" class="social-icon">
+                </a>
+                <a href="https://www.twitter.com/" target="_blank">
+                    <img src="{% static 'images/image32.jpg' %}" alt="Twitter" class="social-icon">
+                </a>
+                <a href="https://wa.me/" target="_blank">
+                    <img src="{% static 'images/image33.jpg' %}" alt="WhatsApp" class="social-icon">
+                </a>
+            </div>
+            
+        </form>
+    </div>
+</body>
+</html>

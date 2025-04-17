@@ -1,0 +1,108 @@
+/* Base Styling for the whole page */
+body {
+    background-color: #f5f5f5;
+    color: #131313;
+    margin: 0;
+    padding: 20px;
+}
+/* Card container */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;  /* Center align items horizontally */
+    align-items: center;  /* Center align items vertically */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Card styling */
+.card {
+    background-color: #fff7e6; /* Soft goldish yellow */
+    border: 2px solid #b97a00; /* Rich golden border */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin: 10px;
+    text-align: left;
+    font-size: 16px;
+    transition: transform 0.2s ease;
+    max-width: 500px;  /* Maximum width for the card */
+}
+
+/* Hover effect for the card */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Buttons */
+.btn {
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Update Button */
+.update-btn {
+    background-color: #ffd54f;
+    color: #5d4037;
+    border: 1px solid #fbc02d;
+}
+
+.update-btn:hover {
+    background-color: #ffb300;
+}
+
+/* Accept Button */
+.accept-btn {
+    background-color: #66bb6a;
+    color: white;
+    border: 1px solid #388e3c;
+}
+
+.accept-btn:hover {
+    background-color: #388e3c;
+}
+
+/* Reject Button */
+.reject-btn {
+    background-color: #ef5350;
+    color: white;
+    border: 1px solid #d32f2f;
+}
+
+.reject-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Clear Button */
+.clear {
+    background-color: #f44336;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.clear:hover {
+    background-color: #c62828;
+}
+
+/* Add some traditional patterns (optional) */
+.card-container {
+    background: url('{% static "images/pattern.png" %}') repeat;
+    padding: 20px;
+    border-radius: 15px;
+}

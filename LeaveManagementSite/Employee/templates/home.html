@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Company Portal Dashboard{% endblock %}
+{% block css_block %}
+<link rel="stylesheet" href="{% static 'css/homes.css' %}">
+{% endblock %}
+{% block content %}
+<section class="employer-section">
+    <div class="container">
+        <div class="image-wrapper">
+            <img src="{% static 'images/image100.webp' %}" alt="Calendar" class="calendar-img">
+        </div>
+        <div class="content">
+            <h2>📢Latest Announcements</h2>
+            <p>
+                You will get the company announcements here.
+            </p>
+
+
+            <section>
+                {% if user.is_staff %}
+                <button><a href="{% url 'Employee:announcement_list' %}">Add announcements</a></button>
+                {% else %}
+
+                {% endif %}
+
+                {% if announcements %}
+                <table class="announcement-table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Content</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for announcement in announcements %}
+                        <tr>
+                            <td><strong>{{ announcement.title }}</strong></td>
+                            <td>{{ announcement.content|truncatewords:20 }}</td>
+                            <td>{{ announcement.created_at|date:"F d, Y" }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                <p>No announcements available!</p>
+                {% endif %}
+            </section>
+
+        </div>
+</section>
+
+
+
+<section class="employee-benefits">
+    <div class="benefits-container">
+        <div class="content">
+            {% if user.is_staff %}
+            <h2>💼 Work From Home </h2>
+            <button>
+                <a href="{% url 'Employee:application' %}">
+                    💼 View Applications
+                </a>
+            </button>
+            {% else %}
+            <button>
+                <a class="apply-link" href="{% url 'Employee:apply_work' %}">Apply for Work from home</a>
+            </button>
+            {% endif %}
+
+            <p>Latest  Applications Submitted</p>
+
+            <div class="announcement-card">
+                <table class="announcement-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Reason</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for application in applications %}
+                        <tr>
+                            <td>{{ application.name }}</td>
+                            <td>{{ application.age }}</td>
+                            <td>{{ application.reason }}</td>
+                            <td>{{ application.status }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="4">No employees found.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="image-wrapper">
+            <img src="{% static 'images/image101.webp' %}" alt=" Opportunities" class="calendar-img">
+        </div>
+    </div>
+</section>
+<section class="global-platform-section py-6">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <!-- Text Content -->
+            <div class="col-lg-6">
+
+                <section>
+                    {% if user.is_staff %}
+                    <button><a class="apply-link" href="{% url 'Employee:payroll_list' %}">
+                            View payrolls
+                        </a></button>
+                    <button><a href="{% url 'Employee:add' %}">Add Payroll</a></button>
+                    {% else %}
+                    <button><a class="apply-link" href="{% url 'Employee:payroll_list' %}">
+                            View payrolls
+                        </a></button>
+                    {% endif %}
+                    {% if announcements %}
+
+                    <h3>My Payroll</h3>
+                    <table class="announcement-table">
+                        <thead>
+                            <tr>
+                                <th>Employee</th>
+                                <th>Salary</th>
+                                <th>Deductions</th>
+                                <th>Total Pay</th>
+                                <th>Month</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for payroll in payrolls %}
+                            <tr>
+                                <td>{{ payroll.employee.username }}</td>
+                                <td>{{ payroll.salary }}</td>
+                                <td>{{ payroll.deductions }}</td>
+                                <td>{{ payroll.total_pay }}</td>
+                                <td>{{ payroll.month }}</td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="5">No payroll data available.</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    {% else %}
+                    <p>No announcements available!</p>
+                    {% endif %}
+                </section>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="platform-image-container position-relative">
+                    <div class="decorative-box"></div>
+                    <img src="{% static 'images/image102.jpg' %}" alt="Platform Interface"
+                        class="img-fluid rounded-4 shadow-lg position-relative">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
